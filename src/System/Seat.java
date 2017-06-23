@@ -33,4 +33,12 @@ public class Seat {
     public void setClient(Client client) {
         this.client = client;
     }
+
+    public Seat copy(){
+        Seat copy = new Seat();
+        copy.setRownumber(rownumber);
+        copy.setSeatnumber(seatnumber);
+        copy.setClient(null);
+        return copy;
+    }
 }
