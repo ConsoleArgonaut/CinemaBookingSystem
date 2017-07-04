@@ -1,6 +1,8 @@
 import org.junit.Assert;
+import org.junit.Rule;
 import org.junit.Test;
 import System.*;
+import org.junit.rules.ExpectedException;
 
 import java.awt.print.Book;
 import java.sql.Array;
@@ -20,6 +22,20 @@ public class BookingSystemTester {
                 Assert.assertEquals(s.getClient().getPhonenumber(), "+43 32 245 54 32");
             }
         }
+    }
+
+    @Rule
+    public ExpectedException thrown = ExpectedException.none();
+
+    @Test
+    public void bookSeats_alreadyBooked() {
+        //Expect an Illegal Argument Exception
+        thrown.expect(IllegalArgumentException.class);
+
+        BookingSystem cinema = createDefaultCinema();
+        cinema.bookSeats(new Client("Eric", "Boldman", "+43 32 245 54 32"), cinema.getShows().get(0), 1, 1, 3);
+        //Try to book a seat that was already booked
+        cinema.bookSeats(new Client("Clint", "Eastwood", "+96 53 221 85 41"), cinema.getShows().get(0), 1, 2, 2);
     }
 
     @Test
