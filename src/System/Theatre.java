@@ -36,5 +36,15 @@ public class Theatre implements Serializable {
         copy.setSeats(copySeats);
         return null;
     }
+
+    public Theatre(){
+        theatrenumber = "";
+        seats = new Seat[0];
+    }
+
+    public Theatre(String theatrenumberToSet, Seat[] seatsToSet){
+        theatrenumber = theatrenumberToSet;
+        seats = seatsToSet;
+    }
 }
 

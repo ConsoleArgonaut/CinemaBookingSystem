@@ -4,8 +4,6 @@ import System.*;
 
 import java.sql.Date;
 
-import static org.junit.Assert.*;
-
 /**
  * Created by Michael on 04.07.2017.
  */
@@ -64,7 +62,7 @@ public class BookingSystemTester {
         Show show1 = new Show();
         Movie movie = new Movie();
         movie.description = "test";
-        movie.lenght= 20;
+        movie.length = 20;
         movie.title = "Testikus";
         show1.setMovie(movie);
         show1.setStartTime(Date.valueOf("2007-12-25"));

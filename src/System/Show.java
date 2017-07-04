@@ -36,4 +36,16 @@ public class Show implements Serializable {
     public void setTheatre(Theatre theatre) {
         this.theatre = theatre;
     }
+
+    public Show(){
+        movie = null;
+        startTime = null;
+        theatre = null;
+    }
+
+    public Show(Movie showMovie, Date showStartTime, Theatre showTheatre){
+        movie = showMovie;
+        startTime = showStartTime;
+        theatre = showTheatre;
+    }
 }

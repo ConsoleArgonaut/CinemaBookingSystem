@@ -43,4 +43,15 @@ public class Seat implements Serializable {
         copy.setClient(null);
         return copy;
     }
+
+    public Seat(){
+        seatnumber = 0;
+        rownumber = 0;
+        client = null;
+    }
+
+    public Seat(int rownumberToSet, int seatnumberToSet){
+        seatnumber = seatnumberToSet;
+        rownumber = rownumberToSet;
+    }
 }

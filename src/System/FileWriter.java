@@ -10,7 +10,7 @@ import java.util.HashSet;
  */
 public class FileWriter {
 
-    private String path = "C:\\temp\\cinema.ser";
+    private String path;
 
     public String getPath() {
         return path;
@@ -18,6 +18,14 @@ public class FileWriter {
 
     public void setPath(String path) {
         this.path = path;
+    }
+
+    public FileWriter(){
+        path = "C:\\temp\\cinema.ser";
+    }
+
+    public FileWriter(String outputPath){
+        path = outputPath;
     }
 
     public void serializeCinema(ArrayList<Show> shows, ArrayList<Theatre> theatres) {

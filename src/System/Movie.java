@@ -12,5 +12,19 @@ public class Movie implements Serializable {
 
     public String trailer;
 
-    public int lenght;
+    public int length;
+
+    public Movie(){
+        title = "";
+        description = "";
+        trailer = "";
+        length = 0;
+    }
+
+    public Movie(String movieTitle, String movieDescription, int movieLength, String movieTrailer){
+        title = movieTitle;
+        description = movieDescription;
+        trailer = movieTrailer;
+        length = movieLength;
+    }
 }
