@@ -9,8 +9,8 @@ import java.util.ArrayList;
  * Created by Michael on 23.06.2017.
  */
 public class BookingSystem {
-    private ArrayList<Show> shows;
-    private ArrayList<Theatre> theatres;
+    private ArrayList<Show> shows = new ArrayList<Show>();
+    private ArrayList<Theatre> theatres = new ArrayList<Theatre>();
 
     public Movie[] getAllCurrentMovies() {
         ArrayList<Movie> movies = new ArrayList<Movie>();
@@ -100,12 +100,12 @@ public class BookingSystem {
         return client;
     }
 
-    public void Save(){
+    public void save(){
         FileWriter writer = new FileWriter();
         writer.serializeCinema(shows, theatres);
     }
 
-    public void Load(){
+    public void load(){
         FileWriter writer = new FileWriter();
         SavingObject savObject = writer.deserialzeCinema();
         shows = savObject.shows;
