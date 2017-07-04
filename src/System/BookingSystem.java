@@ -45,7 +45,7 @@ public class BookingSystem {
 
     public void cancelReservation(String phonenumber, Show show) {
         for (Seat s : show.getTheatre().getSeats()) {
-            if (s.getClient().getPhonenumber() == phonenumber)
+            if (s.getClient() != null && s.getClient().getPhonenumber() == phonenumber)
                 s.setClient(null);
         }
     }
@@ -74,7 +74,7 @@ public class BookingSystem {
         ArrayList<Show> showsToReturn = new ArrayList<Show>();
         for (Show show : shows) {
             for (Seat seat : show.getTheatre().getSeats()) {
-                if(showsToReturn.contains(show) && seat.getClient().getPhonenumber() == phonenumber)
+                if(!showsToReturn.contains(show) && seat.getClient() != null && seat.getClient().getPhonenumber() == phonenumber)
                     showsToReturn.add(show);
             }
         }
@@ -94,6 +94,17 @@ public class BookingSystem {
         for (Show show : shows) {
             for (Seat seat : show.getTheatre().getSeats()) {
                 if(client == null && seat.getClient().getFirstname() == firstName && seat.getClient().getLastname() == lastName)
+                    client = seat.getClient();
+            }
+        }
+        return client;
+    }
+
+    public Client getClient(String phonenumber) {
+        Client client = null;
+        for (Show show : shows) {
+            for (Seat seat : show.getTheatre().getSeats()) {
+                if(client == null && seat.getClient().getPhonenumber() == phonenumber)
                     client = seat.getClient();
             }
         }

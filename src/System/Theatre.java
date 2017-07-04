@@ -34,7 +34,7 @@ public class Theatre implements Serializable {
             copySeats[i] = seats[i].copy();
         }
         copy.setSeats(copySeats);
-        return null;
+        return copy;
     }
 
     public Theatre(){
