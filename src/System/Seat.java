@@ -1,9 +1,11 @@
 package System;
 
+import java.io.Serializable;
+
 /**
  * Created by Michael on 23.06.2017.
  */
-public class Seat {
+public class Seat implements Serializable {
     private int seatnumber;
 
     private int rownumber;

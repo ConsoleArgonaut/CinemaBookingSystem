@@ -1,9 +1,11 @@
 package System;
 
+import java.io.Serializable;
+
 /**
  * Created by Michael on 23.06.2017.
  */
-public class Client {
+public class Client implements Serializable {
     private String firstname;
 
     private String lastname;

@@ -1,5 +1,8 @@
 package System;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 /**
@@ -82,6 +85,10 @@ public class BookingSystem {
         return getReservations(client.getPhonenumber());
     }
 
+    public ArrayList<Show> getReservations(String firstName, String lastName) {
+        return getReservations(getClient(firstName, lastName));
+    }
+
     public Client getClient(String firstName, String lastName) {
         Client client = null;
         for (Show show : shows) {
@@ -91,5 +98,17 @@ public class BookingSystem {
             }
         }
         return client;
+    }
+
+    public void Save(){
+        FileWriter writer = new FileWriter();
+        writer.serializeCinema(shows, theatres);
+    }
+
+    public void Load(){
+        FileWriter writer = new FileWriter();
+        SavingObject savObject = writer.deserialzeCinema();
+        shows = savObject.shows;
+        theatres = savObject.theatres;
     }
 }

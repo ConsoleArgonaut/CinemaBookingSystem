@@ -1,9 +1,11 @@
 package System;
 
+import java.io.Serializable;
+
 /**
  * Created by Michael on 23.06.2017.
  */
-public class Theatre {
+public class Theatre implements Serializable {
     private String theatrenumber;
 
     private Seat[] seats;

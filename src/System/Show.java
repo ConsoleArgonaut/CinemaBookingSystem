@@ -1,11 +1,12 @@
 package System;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by Michael on 23.06.2017.
  */
-public class Show {
+public class Show implements Serializable {
     private Movie movie;
 
     private Date startTime;
