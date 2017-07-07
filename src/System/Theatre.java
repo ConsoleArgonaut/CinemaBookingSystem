@@ -6,26 +6,33 @@ import java.io.Serializable;
  * Created by Michael on 23.06.2017.
  */
 public class Theatre implements Serializable {
+    /* The number of the theatre */
     private String theatrenumber;
 
+    /* The seats located in the theatre */
     private Seat[] seats;
 
+    /* Getter for the theatrenumber  */
     public String getTheatrenumber() {
         return theatrenumber;
     }
 
+    /* Setter for the theatrenumber  */
     public void setTheatrenumber(String theatrenumber) {
         this.theatrenumber = theatrenumber;
     }
 
+    /* Getter for the seats  */
     public Seat[] getSeats() {
         return seats;
     }
 
+    /* Setter for the seats  */
     public void setSeats(Seat[] seats) {
         this.seats = seats;
     }
 
+    /* Creates a copy of the current theatre */
     public Theatre copy(){
         Theatre copy = new Theatre();
         copy.setTheatrenumber(this.theatrenumber);
@@ -37,16 +44,19 @@ public class Theatre implements Serializable {
         return copy;
     }
 
+    /* Constructor */
     public Theatre(){
         theatrenumber = "";
         seats = new Seat[0];
     }
 
+    /* Constructor */
     public Theatre(String theatrenumberToSet, Seat[] seatsToSet){
         theatrenumber = theatrenumberToSet;
         seats = seatsToSet;
     }
 
+    /* Returns all Seats that were not taken by a client yet */
     public String getAllOpenSeats(){
         String openSeats = "";
 
