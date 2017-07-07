@@ -8,6 +8,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.awt.*;
+
 public class Main extends Application {
 
     @Override
@@ -22,6 +24,8 @@ public class Main extends Application {
 
     /*Properties*/
     private static Stage PrimaryStage;
+
+    @FXML private Label seatOverview;
 
     public static void main(String[] args) {
         launch(args);
