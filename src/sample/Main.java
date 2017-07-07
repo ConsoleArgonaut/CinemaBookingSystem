@@ -10,6 +10,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import System.*;
 
 public class Main extends Application {
 
@@ -24,6 +25,8 @@ public class Main extends Application {
     }
 
     /*Properties*/
+    private static BookingSystem system;
+
     private static Stage PrimaryStage;
 
     @FXML private TextField cancelreservation_phoneNumber = new TextField();
