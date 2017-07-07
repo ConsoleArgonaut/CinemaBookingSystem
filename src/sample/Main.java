@@ -6,6 +6,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -22,6 +25,27 @@ public class Main extends Application {
 
     /*Properties*/
     private static Stage PrimaryStage;
+
+    @FXML private TextField cancelreservation_phoneNumber = new TextField();
+    @FXML private TextField cancelreservation_firstName = new TextField();
+    @FXML private TextField cancelreservation_lastName = new TextField();
+    @FXML private ChoiceBox cancelreservation_bookedMovie = new ChoiceBox();
+
+    @FXML private ChoiceBox bookseats_shows = new ChoiceBox();
+    @FXML private TextField bookseats_row = new TextField();
+    @FXML private TextField bookseats_seatFrom = new TextField();
+    @FXML private TextField bookseats_seatTill = new TextField();
+    @FXML private TextField bookseats_phonenumber = new TextField();
+    @FXML private TextField bookseats_name = new TextField();
+    @FXML private TextField bookseats_firstName = new TextField();
+    @FXML private Label bookseats_openRows = new Label();
+
+    @FXML private ChoiceBox addshow_theatre = new ChoiceBox();
+    @FXML private ChoiceBox addshow_film = new ChoiceBox();
+    @FXML private TextField addshow_title = new TextField();
+    @FXML private TextField addshow_description = new TextField();
+    @FXML private TextField addshow_duration = new TextField();
+    @FXML private TextField addshow_trailer = new TextField();
 
     public static void main(String[] args) {
         launch(args);
@@ -70,4 +94,16 @@ public class Main extends Application {
 
         }
     }
+
+    @FXML
+    public void addshow_save(Event arg0){}
+
+    @FXML
+    public void bookseats_select(Event arg0){}
+
+    @FXML
+    public void bookseats_submit(Event arg0){}
+
+    @FXML
+    public void cancelreservation_submit(Event arg0){}
 }

@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<BorderPane maxHeight="600.0" maxWidth="900.0" minHeight="600.0" minWidth="900.0" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Main">
+<BorderPane maxHeight="600.0" maxWidth="900.0" minHeight="600.0" minWidth="900.0" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Main">
     <center>
         <GridPane alignment="center" hgap="10" vgap="10">
          <columnConstraints>
@@ -37,7 +37,7 @@
                <children>
                   <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowSpan="2147483647">
                      <children>
-                        <Label layoutX="50.0" layoutY="50.0" text="Movie" />
+                        <Label layoutX="50.0" layoutY="50.0" text="Shows:" />
                         <Label layoutX="50.0" layoutY="100.0" text="Row:" />
                         <TextField layoutX="150.0" layoutY="100.0" />
                         <Label layoutX="50.0" layoutY="150.0" text="Seat from:" />
