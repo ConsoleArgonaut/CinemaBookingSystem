@@ -38,7 +38,7 @@
                         <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowSpan="2147483647" />
                         <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowSpan="2147483647">
                             <children>
-                                <Label layoutX="50.0" layoutY="50.0" text="phone number" />
+                                <Label layoutX="50.0" layoutY="50.0" text="Phone Number" />
                         <TextField layoutX="150.0" layoutY="50.0" />
                                 <Label layoutX="50.0" layoutY="100.0" text="First Name" />
                         <TextField layoutX="150.0" layoutY="100.0" />
@@ -47,7 +47,7 @@
                                 <Button layoutX="350.0" layoutY="200.0" mnemonicParsing="false" text="Submit" />
                                 <Label layoutX="50.0" layoutY="250.0" text="Booked Movie" />
                         <ChoiceBox layoutX="150.0" layoutY="250.0" prefWidth="150.0" />
-                        <Button layoutX="350.0" layoutY="350.0" mnemonicParsing="false" text="Cancel" />
+                        <Button layoutX="350.0" layoutY="300.0" mnemonicParsing="false" text="Cancel" />
                             </children></Pane>
                     </children>
                 </GridPane>
