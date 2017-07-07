@@ -16,11 +16,11 @@
     <center>
         <GridPane alignment="center" hgap="10" vgap="10">
          <children>
-            <Pane prefHeight="555.0" prefWidth="900.0" style="-fx-background-color: #ecf9f2;">
+            <Pane prefHeight="555.0" prefWidth="900.0">
                <children>
-                  <Button layoutX="338.0" layoutY="141.0" mnemonicParsing="false" prefHeight="183.0" prefWidth="188.0" style="-fx-background-color: white;" text="book seats" />
-                  <Button layoutX="76.0" layoutY="142.0" mnemonicParsing="false" prefHeight="182.0" prefWidth="190.0" style="-fx-background-color: white;" text="cancel reservation" />
-                  <Button layoutX="586.0" layoutY="140.0" mnemonicParsing="false" prefHeight="185.0" prefWidth="193.0" style="-fx-background-color: white;" text="add show" />
+                  <Button layoutX="358.0" layoutY="64.0" mnemonicParsing="false" prefHeight="406.0" prefWidth="188.0" style="-fx-background-color: white;" text="book seats" />
+                  <Button layoutX="82.0" layoutY="65.0" mnemonicParsing="false" prefHeight="405.0" prefWidth="190.0" style="-fx-background-color: white;" text="cancel reservation" />
+                  <Button layoutX="629.0" layoutY="65.0" mnemonicParsing="false" prefHeight="404.0" prefWidth="193.0" style="-fx-background-color: white;" text="add show" />
                </children></Pane>
          </children>
          <columnConstraints>
