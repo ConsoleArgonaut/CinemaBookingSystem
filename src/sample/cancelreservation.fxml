@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<BorderPane maxHeight="600.0" maxWidth="900.0" minHeight="600.0" minWidth="900.0" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Main">
+<BorderPane maxHeight="600.0" maxWidth="900.0" minHeight="600.0" minWidth="900.0" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Main">
     <center>
         <GridPane alignment="center" hgap="10" vgap="10">
             <columnConstraints>
@@ -46,15 +46,15 @@
                         <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowSpan="2147483647">
                             <children>
                                 <Label layoutX="50.0" layoutY="50.0" text="Phone Number" />
-                        <TextField layoutX="150.0" layoutY="50.0" />
+                        <TextField fx:id="cancelreservation_phoneNumber" layoutX="150.0" layoutY="50.0" />
                                 <Label layoutX="50.0" layoutY="100.0" text="First Name" />
-                        <TextField layoutX="150.0" layoutY="100.0" />
+                        <TextField fx:id="cancelreservation_firstName" layoutX="150.0" layoutY="100.0" />
                         <Label layoutX="50.0" layoutY="150.0" text="Last Name" />
-                        <TextField layoutX="150.0" layoutY="150.0" />
-                                <Button layoutX="350.0" layoutY="200.0" mnemonicParsing="false" text="Submit" />
+                        <TextField fx:id="cancelreservation_lastName" layoutX="150.0" layoutY="150.0" />
+                                <Button layoutX="350.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#cancelreservation_submit" text="Submit" />
                                 <Label layoutX="50.0" layoutY="250.0" text="Booked Movie" />
-                        <ChoiceBox layoutX="150.0" layoutY="250.0" prefWidth="150.0" />
-                        <Button layoutX="350.0" layoutY="300.0" mnemonicParsing="false" text="Cancel" />
+                        <ChoiceBox fx:id="cancelreservation_bookedMovie" layoutX="150.0" layoutY="250.0" prefWidth="150.0" />
+                        <Button layoutX="350.0" layoutY="300.0" mnemonicParsing="false" onMouseClicked="#cancelreservation_cancel" text="Cancel" />
                             </children></Pane>
                     </children>
                 </GridPane>

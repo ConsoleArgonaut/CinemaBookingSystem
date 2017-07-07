@@ -38,7 +38,7 @@ public class Main extends Application {
     @FXML private TextField bookseats_phonenumber = new TextField();
     @FXML private TextField bookseats_name = new TextField();
     @FXML private TextField bookseats_firstName = new TextField();
-    @FXML private Label bookseats_openRows = new Label();
+    @FXML private Label bookseats_openRows = new Label();;
 
     @FXML private ChoiceBox addshow_theatre = new ChoiceBox();
     @FXML private ChoiceBox addshow_film = new ChoiceBox();
@@ -55,7 +55,7 @@ public class Main extends Application {
     /*This sets starter as current scene*/
     public void goToStarter(Event arg0) {
         try{
-            PrimaryStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("race_selection.fxml")), 900, 600));
+            PrimaryStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("starter.fxml")), 900, 600));
         }
         catch (Exception ex){
 
@@ -106,4 +106,13 @@ public class Main extends Application {
 
     @FXML
     public void cancelreservation_submit(Event arg0){}
+
+    @FXML
+    public void cancelreservation_cancel(Event arg0){}
+
+    @FXML
+    private void initialize(){
+        if(bookseats_openRows != null)
+            bookseats_openRows.setText(String.valueOf("Row 1: x"));
+    }
 }

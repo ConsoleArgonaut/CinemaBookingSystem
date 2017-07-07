@@ -39,24 +39,24 @@
                      <children>
                         <Label layoutX="50.0" layoutY="50.0" text="Shows:" />
                         <Label layoutX="50.0" layoutY="100.0" text="Row:" />
-                        <TextField layoutX="150.0" layoutY="100.0" />
+                        <TextField fx:id="bookseats_row" layoutX="150.0" layoutY="100.0" />
                         <Label layoutX="50.0" layoutY="150.0" text="Seat from:" />
-                        <TextField layoutX="150.0" layoutY="150.0" />
+                        <TextField fx:id="bookseats_seatFrom" layoutX="150.0" layoutY="150.0" />
                         <Label layoutX="50.0" layoutY="200.0" text="Seat till:" />
-                        <TextField layoutX="150.0" layoutY="200.0" />
+                        <TextField fx:id="bookseats_seatTill" layoutX="150.0" layoutY="200.0" />
                         <Label layoutX="50.0" layoutY="250.0" text="Phonenumber:" />
-                        <TextField layoutX="150.0" layoutY="250.0" />
+                        <TextField fx:id="bookseats_phonenumber" layoutX="150.0" layoutY="250.0" />
                         <Label layoutX="50.0" layoutY="300.0" text="Name:" />
-                        <TextField layoutX="150.0" layoutY="300.0" />
+                        <TextField fx:id="cancelreservation_lastName" layoutX="150.0" layoutY="300.0" />
                         <Label layoutX="50.0" layoutY="350.0" text="First Name:" />
-                        <TextField layoutX="150.0" layoutY="350.0" />
-                        <Button layoutX="350.0" layoutY="400.0" mnemonicParsing="false" text="Submit" />
-                        <ChoiceBox layoutX="150.0" layoutY="50.0" prefWidth="150.0" />
-                        <Button layoutX="350.0" layoutY="50.0" mnemonicParsing="false" text="Book" />
+                        <TextField fx:id="bookseats_firstName" layoutX="150.0" layoutY="350.0" />
+                        <Button layoutX="350.0" layoutY="400.0" mnemonicParsing="false" onMouseClicked="#bookseats_submit" text="Submit" />
+                        <ChoiceBox fx:id="bookseats_shows" layoutX="150.0" layoutY="50.0" prefWidth="150.0" />
+                        <Button layoutX="350.0" layoutY="50.0" mnemonicParsing="false" onMouseClicked="#bookseats_select" text="Select" />
                      </children></Pane>
                   <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowSpan="2147483647">
                      <children>
-                        <Label layoutX="50.0" layoutY="50.0" prefHeight="350.0" prefWidth="350.0" text="Label" />
+                        <Label fx:id="bookseats_openRows" layoutX="50.0" layoutY="50.0" prefHeight="350.0" prefWidth="350.0" text="Label" />
                      </children></Pane>
                </children>
             </GridPane>

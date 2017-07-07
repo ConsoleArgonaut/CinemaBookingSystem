@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<BorderPane maxHeight="600.0" maxWidth="900.0" minHeight="600.0" minWidth="900.0" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Main">
+<BorderPane maxHeight="600.0" maxWidth="900.0" minHeight="600.0" minWidth="900.0" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Main">
     <center>
         <GridPane alignment="center" hgap="10" vgap="10">
          <columnConstraints>
@@ -46,18 +46,18 @@
                   <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowSpan="2147483647">
                      <children>
                         <Label layoutX="50.0" layoutY="50.0" text="Theater" />
-                        <ChoiceBox layoutX="150.0" layoutY="50.0" prefWidth="150.0" />
+                        <ChoiceBox fx:id="addshow_theatre" layoutX="150.0" layoutY="50.0" prefWidth="150.0" />
                         <Label layoutX="50.0" layoutY="100.0" text="Film" />
-                        <ChoiceBox layoutX="150.0" layoutY="100.0" prefWidth="150.0" />
+                        <ChoiceBox fx:id="addshow_film" layoutX="150.0" layoutY="100.0" prefWidth="150.0" />
                         <Label layoutX="50.0" layoutY="150.0" text="Title" />
-                        <TextField layoutX="150.0" layoutY="150.0" />
+                        <TextField fx:id="addshow_title" layoutX="150.0" layoutY="150.0" />
                         <Label layoutX="50.0" layoutY="200.0" text="Description" />
-                        <TextField layoutX="150.0" layoutY="200.0" />
+                        <TextField fx:id="addshow_description" layoutX="150.0" layoutY="200.0" />
                         <Label layoutX="50.0" layoutY="250.0" text="Duration" />
-                        <TextField layoutX="150.0" layoutY="250.0" />
+                        <TextField fx:id="addshow_duration" layoutX="150.0" layoutY="250.0" />
                         <Label layoutX="50.0" layoutY="300.0" text="Trailer" />
-                        <TextField layoutX="150.0" layoutY="300.0" />
-                        <Button layoutX="350.0" layoutY="350.0" mnemonicParsing="false" text="Save" />
+                        <TextField fx:id="addshow_trailer" layoutX="150.0" layoutY="300.0" />
+                        <Button layoutX="350.0" layoutY="350.0" mnemonicParsing="false" onMouseClicked="#addshow_save" text="Save" />
                      </children></Pane>
                </children>
             </GridPane>
