@@ -122,7 +122,16 @@ public class Main extends Application {
     }
 
     @FXML
-    public void bookseats_submit(Event arg0){}
+    public void bookseats_submit(Event arg0){
+        if(bookseats_row.getText().length() > 0 && bookseats_seatFrom.getText().length() > 0 && bookseats_seatTill.getText().length() > 0 && bookseats_phonenumber.getText().length() > 0){
+            system.bookSeats(new Client(bookseats_firstName.getText(), bookseats_name.getText(), bookseats_phonenumber.getText()), (Show)bookseats_shows.getValue(), Integer.parseInt(bookseats_row.getText()), Integer.parseInt(bookseats_seatFrom.getText()), Integer.parseInt(bookseats_seatTill.getText()));
+            system.save();
+            bookseats_row.setText("");
+            bookseats_seatFrom.setText("");
+            bookseats_seatTill.setText("");
+            bookseats_openRows.setText(((Show)bookseats_shows.getValue()).getTheatre().getAllOpenSeats());
+        }
+    }
 
     @FXML
     public void cancelreservation_submit(Event arg0){}
@@ -142,6 +151,7 @@ public class Main extends Application {
                 bookseats_openRows.setText(((Show)bookseats_shows.getValue()).getTheatre().getAllOpenSeats());
             }
             if(addshow_title != null){
+                //Add show
                 addshow_theatre.setItems(FXCollections.observableArrayList(system.getTheatres()));
                 addshow_theatre.setValue(addshow_theatre.getItems().get(0));
                 addshow_film.setItems(FXCollections.observableArrayList(system.getMovies()));
