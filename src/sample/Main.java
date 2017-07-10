@@ -117,7 +117,9 @@ public class Main extends Application {
     public void addshow_save(Event arg0){}
 
     @FXML
-    public void bookseats_select(Event arg0){}
+    public void bookseats_select(Event arg0){
+        bookseats_openRows.setText(((Show)bookseats_shows.getValue()).getTheatre().getAllOpenSeats());
+    }
 
     @FXML
     public void bookseats_submit(Event arg0){}
@@ -133,12 +135,12 @@ public class Main extends Application {
         if(isFirstInitialize)
             isFirstInitialize = false;
         else{
-            if(bookseats_openRows != null)
-                bookseats_openRows.setText(String.valueOf("Row 1: x"));
             if(bookseats_shows != null){
                 bookseats_shows.setItems(FXCollections.observableArrayList(system.getShows()));
                 bookseats_shows.setValue(system.getShows().get(0));
             }
+            if(bookseats_openRows != null)
+                bookseats_openRows.setText(((Show)bookseats_shows.getValue()).getTheatre().getAllOpenSeats());
         }
     }
 }
