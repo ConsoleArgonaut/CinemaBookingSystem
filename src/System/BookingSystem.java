@@ -122,4 +122,13 @@ public class BookingSystem {
         shows = savObject.shows;
         theatres = savObject.theatres;
     }
+
+    public ArrayList<Movie> getMovies() {
+        ArrayList<Movie> movies = new ArrayList<Movie>();
+        for (Show s:this.shows) {
+            if(!movies.contains(s.getMovie()))
+                movies.add(s.getMovie());
+        }
+        return movies;
+    }
 }

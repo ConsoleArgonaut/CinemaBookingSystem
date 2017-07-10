@@ -81,5 +81,10 @@ public class Theatre implements Serializable {
 
         return openSeats;
     }
+
+    @Override
+    public String toString() {
+        return theatrenumber + " (Seats: " + String.valueOf(getSeats().length) + ")";
+    }
 }
 

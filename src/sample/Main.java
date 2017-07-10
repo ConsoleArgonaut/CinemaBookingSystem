@@ -136,11 +136,17 @@ public class Main extends Application {
             isFirstInitialize = false;
         else{
             if(bookseats_shows != null){
+                //Bookseats
                 bookseats_shows.setItems(FXCollections.observableArrayList(system.getShows()));
-                bookseats_shows.setValue(system.getShows().get(0));
-            }
-            if(bookseats_openRows != null)
+                bookseats_shows.setValue(bookseats_shows.getItems().get(0));
                 bookseats_openRows.setText(((Show)bookseats_shows.getValue()).getTheatre().getAllOpenSeats());
+            }
+            if(addshow_title != null){
+                addshow_theatre.setItems(FXCollections.observableArrayList(system.getTheatres()));
+                addshow_theatre.setValue(addshow_theatre.getItems().get(0));
+                addshow_film.setItems(FXCollections.observableArrayList(system.getMovies()));
+                addshow_film.setValue(addshow_film.getItems().get(0));
+            }
         }
     }
 }
