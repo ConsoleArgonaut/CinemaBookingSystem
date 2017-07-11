@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<BorderPane maxHeight="600.0" maxWidth="900.0" minHeight="600.0" minWidth="900.0" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Main">
+<BorderPane maxHeight="600.0" maxWidth="900.0" minHeight="600.0" minWidth="900.0" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Main">
     <center>
         <GridPane alignment="center" hgap="10" vgap="10">
          <columnConstraints>
@@ -46,13 +46,13 @@
                         <TextField fx:id="bookseats_seatTill" layoutX="150.0" layoutY="200.0" />
                         <Label layoutX="50.0" layoutY="250.0" text="Phonenumber:" />
                         <TextField fx:id="bookseats_phonenumber" layoutX="150.0" layoutY="250.0" />
-                        <Label layoutX="50.0" layoutY="300.0" text="Last Name:" />
-                        <TextField fx:id="bookseats_name" layoutX="150.0" layoutY="300.0" />
-                        <Label layoutX="50.0" layoutY="350.0" text="First Name:" />
-                        <TextField fx:id="bookseats_firstName" layoutX="150.0" layoutY="350.0" />
-                        <Button layoutX="350.0" layoutY="400.0" mnemonicParsing="false" onMouseClicked="#bookseats_submit" text="Submit" />
-                        <ChoiceBox fx:id="bookseats_shows" layoutX="150.0" layoutY="50.0" prefWidth="150.0" />
-                        <Button layoutX="350.0" layoutY="50.0" mnemonicParsing="false" onMouseClicked="#bookseats_select" text="Select" />
+                        <Label layoutX="55.0" layoutY="351.0" text="Last Name:" />
+                        <TextField fx:id="bookseats_name" layoutX="150.0" layoutY="346.0" />
+                        <Label layoutX="52.0" layoutY="301.0" text="First Name:" />
+                        <TextField fx:id="bookseats_firstName" layoutX="150.0" layoutY="297.0" />
+                        <Button layoutX="361.0" layoutY="395.0" mnemonicParsing="false" onMouseClicked="#bookseats_submit" text="Submit" />
+                        <ChoiceBox fx:id="bookseats_shows" layoutX="150.0" layoutY="44.0" prefHeight="31.0" prefWidth="188.0" />
+                        <Button layoutX="362.0" layoutY="44.0" mnemonicParsing="false" onMouseClicked="#bookseats_select" prefHeight="31.0" prefWidth="66.0" text="Select" />
                      </children></Pane>
                   <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowSpan="2147483647">
                      <children>
@@ -73,18 +73,10 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                     </padding>
                 </Label>
-                <Label fx:id="currentMoneyLabel" prefHeight="41.0" prefWidth="108.0">
-                    <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                    </HBox.margin>
-                    <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                    </padding>
-                </Label>
 
             <ImageView fitHeight="45.0" fitWidth="40.0" onMouseClicked="#goToStarter" pickOnBounds="true" preserveRatio="true">
                <HBox.margin>
-                  <Insets bottom="10.0" left="575.0" right="10.0" top="12.0" />
+                  <Insets bottom="10.0" left="735.0" right="10.0" top="12.0" />
                </HBox.margin>
                <image>
                   <Image url="@../images/home.png" />

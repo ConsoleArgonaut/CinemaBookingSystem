@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<BorderPane maxHeight="600.0" maxWidth="900.0" minHeight="600.0" minWidth="900.0" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Main">
+<BorderPane maxHeight="600.0" maxWidth="900.0" minHeight="600.0" minWidth="900.0" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Main">
     <center>
         <GridPane alignment="center" hgap="10" vgap="10">
             <columnConstraints>
@@ -47,21 +47,21 @@
                         <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowSpan="2147483647">
                             <children>
                                 <Label layoutX="50.0" layoutY="50.0" text="Theater" />
-                                <ChoiceBox fx:id="addshow_theatre" layoutX="150.0" layoutY="50.0" prefWidth="150.0" />
+                                <ChoiceBox fx:id="addshow_theatre" layoutX="210.0" layoutY="45.0" prefHeight="31.0" prefWidth="185.0" />
                                 <Label layoutX="50.0" layoutY="159.0" text="Film" />
-                                <ChoiceBox fx:id="addshow_film" layoutX="150.0" layoutY="151.0" prefWidth="150.0" />
+                                <ChoiceBox fx:id="addshow_film" layoutX="211.0" layoutY="149.0" prefHeight="31.0" prefWidth="183.0" />
                                 <Label layoutX="50.0" layoutY="209.0" text="Title" />
-                                <TextField fx:id="addshow_title" layoutX="150.0" layoutY="201.0" prefHeight="31.0" prefWidth="151.0" />
+                                <TextField fx:id="addshow_title" layoutX="211.0" layoutY="202.0" prefHeight="31.0" prefWidth="182.0" />
                                 <Label layoutX="50.0" layoutY="259.0" text="Description" />
-                                <Label layoutX="50.0" layoutY="340.0" text="Duration (Minutes)" />
-                                <TextField fx:id="addshow_duration" layoutX="150.0" layoutY="332.0" />
+                                <Label layoutX="50.0" layoutY="350.0" text="Duration (Minutes)" />
+                                <TextField fx:id="addshow_duration" layoutX="207.0" layoutY="345.0" />
                                 <Label layoutX="50.0" layoutY="390.0" text="Trailer (Link)" />
-                                <TextField fx:id="addshow_trailer" layoutX="150.0" layoutY="382.0" />
-                                <Button layoutX="350.0" layoutY="432.0" mnemonicParsing="false" onMouseClicked="#addshow_save" text="Save" />
+                                <TextField fx:id="addshow_trailer" layoutX="207.0" layoutY="386.0" />
+                                <Button layoutX="395.0" layoutY="433.0" mnemonicParsing="false" onMouseClicked="#addshow_save" text="Save" />
                         <Label layoutX="50.0" layoutY="102.0" text="Date (19.12.2017 18:30)" />
-                        <TextField fx:id="addshow_date" layoutX="150.0" layoutY="94.0" prefHeight="51.0" prefWidth="150.0" />
-                        <Label layoutX="322.0" layoutY="159.0" text="or" />
-                        <TextArea fx:id="addshow_description" layoutX="150.0" layoutY="252.0" prefHeight="80.0" prefWidth="297.0" />
+                        <TextField fx:id="addshow_date" layoutX="210.0" layoutY="87.0" prefHeight="51.0" prefWidth="184.0" />
+                        <Label layoutX="412.0" layoutY="159.0" text="or" />
+                        <TextArea fx:id="addshow_description" layoutX="211.0" layoutY="248.0" prefHeight="80.0" prefWidth="236.0" />
                             </children></Pane>
                     </children>
                 </GridPane>
@@ -78,18 +78,10 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                     </padding>
                 </Label>
-                <Label fx:id="currentMoneyLabel" prefHeight="41.0" prefWidth="108.0">
-                    <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                    </HBox.margin>
-                    <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                    </padding>
-                </Label>
 
                 <ImageView fitHeight="45.0" fitWidth="40.0" onMouseClicked="#goToStarter" pickOnBounds="true" preserveRatio="true">
                     <HBox.margin>
-                        <Insets bottom="10.0" left="575.0" right="10.0" top="12.0" />
+                        <Insets bottom="10.0" left="740.0" right="10.0" top="12.0" />
                     </HBox.margin>
                     <image>
                         <Image url="@../images/home.png" />
