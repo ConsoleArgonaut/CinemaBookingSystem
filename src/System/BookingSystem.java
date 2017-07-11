@@ -129,7 +129,7 @@ public class BookingSystem {
 
         for (Seat s:show.getTheatre().getSeats()) {
             if(s.getClient() != null)
-                returnValue = returnValue + "\n" + s.getClient().getPhonenumber() + ", " + s.getClient().getFirstname() + " " + s.getClient().getLastname();
+                returnValue = returnValue + "\n" + String.valueOf(s.getRownumber()) + "-" + String.valueOf(s.getSeatnumber()) + ": " + s.getClient().getPhonenumber() + ", " + s.getClient().getFirstname() + " " + s.getClient().getLastname();
         }
 
         return returnValue;
