@@ -47,7 +47,7 @@
                         <Label layoutX="50.0" layoutY="250.0" text="Phonenumber:" />
                         <TextField fx:id="bookseats_phonenumber" layoutX="150.0" layoutY="250.0" />
                         <Label layoutX="50.0" layoutY="300.0" text="Last Name:" />
-                        <TextField fx:id="cancelreservation_lastName" layoutX="150.0" layoutY="300.0" />
+                        <TextField fx:id="bookseats_name" layoutX="150.0" layoutY="300.0" />
                         <Label layoutX="50.0" layoutY="350.0" text="First Name:" />
                         <TextField fx:id="bookseats_firstName" layoutX="150.0" layoutY="350.0" />
                         <Button layoutX="350.0" layoutY="400.0" mnemonicParsing="false" onMouseClicked="#bookseats_submit" text="Submit" />
