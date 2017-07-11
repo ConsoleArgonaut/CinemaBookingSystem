@@ -2,7 +2,6 @@ package sample;
 
 import javafx.application.Application;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,7 +14,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import System.*;
 
-import java.sql.Date;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -74,6 +72,9 @@ public class Main extends Application {
     @FXML private TextField addshow_trailer = new TextField();
     @FXML private TextField addshow_date = new TextField();
 
+    @FXML private ChoiceBox manageshows_show = new ChoiceBox();
+    @FXML private Label manageshows_reservations = new Label();
+
     public static void main(String[] args) {
         launch(args);
     }
@@ -94,6 +95,17 @@ public class Main extends Application {
     public void goToBookSeats(Event arg0) {
         try{
             PrimaryStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("bookseats.fxml")), 900, 600));
+        }
+        catch (Exception ex){
+
+        }
+    }
+
+    @FXML
+    /*This sets bookseats as current scene*/
+    public void goToManageShows(Event arg0) {
+        try{
+            PrimaryStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("manageshows.fxml")), 900, 600));
         }
         catch (Exception ex){
 
@@ -192,6 +204,19 @@ public class Main extends Application {
     }
 
     @FXML
+    public void manageshows_delete(Event arg0){
+        if(manageshows_show.getItems().size() > 0)
+            system.getShows().remove(manageshows_show.getValue());
+        system.save();
+        goToManageShows(null);
+    }
+
+    @FXML
+    public void manageshows_getReservations(Event arg0){
+        manageshows_reservations.setText(system.getReservations((Show)manageshows_show.getValue()));
+    }
+
+    @FXML
     private void initialize(){
         if(isFirstInitialize)
             isFirstInitialize = false;
@@ -208,6 +233,13 @@ public class Main extends Application {
                 addshow_theatre.setValue(addshow_theatre.getItems().get(0));
                 addshow_film.setItems(FXCollections.observableArrayList(system.getAllCurrentMovies()));
                 addshow_film.setValue(addshow_film.getItems().get(0));
+            }
+            if(manageshows_show != null){
+                if(system.getShows().size() > 0) {
+                    manageshows_show.setItems(FXCollections.observableArrayList(system.getShows()));
+                    manageshows_show.setValue(manageshows_show.getItems().get(0));
+                    manageshows_reservations.setText(system.getReservations((Show) manageshows_show.getValue()));
+                }
             }
         }
     }

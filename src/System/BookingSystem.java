@@ -123,4 +123,15 @@ public class BookingSystem {
         shows = savObject.shows;
         theatres = savObject.theatres;
     }
+
+    public String getReservations(Show show){
+        String returnValue = "Reservations:";
+
+        for (Seat s:show.getTheatre().getSeats()) {
+            if(s.getClient() != null)
+                returnValue = returnValue + "\n" + s.getClient().getPhonenumber() + ", " + s.getClient().getFirstname() + " " + s.getClient().getLastname();
+        }
+
+        return returnValue;
+    }
 }
