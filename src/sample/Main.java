@@ -31,16 +31,38 @@ public class Main extends Application {
         PrimaryStage = primaryStage;
         system = new BookingSystem();
 
-        /*
-        system.getTheatres().add(new Theatre("Theatre 1", new Seat[] {new Seat(1, 1), new Seat(1, 2), new Seat(1, 3), new Seat(2, 1), new Seat(2, 2), new Seat(2, 3)}));
-        system.getTheatres().add(new Theatre("Theatre 2", new Seat[] {new Seat(1, 1), new Seat(1, 2), new Seat(1, 3), new Seat(2, 1), new Seat(2, 2), new Seat(2, 3)}));
-        system.getTheatres().add(new Theatre("Theatre 3 - Kids", new Seat[] {new Seat(1, 1), new Seat(1, 2), new Seat(1, 3)}));
-        system.getShows().add(new Show(new Movie("RoboCop", "Der Polizist Alex Murphy wird bei einem Einsatz brutal ermordet und erwacht im Körper eines Roboters zu neuem Leben.", 103, "https://www.youtube.com/watch?v=zbCbwP6ibR4"), Date.valueOf("2018-08-25"), system.getTheatres().get(0).copy()));
-        system.getShows().add(new Show(new Movie("Die Hochzeits-Crasher", "Die Hochzeits-Crasher ist eine Filmkomödie des Regisseurs David Dobkin aus dem Jahre 2005 mit Owen Wilson und Vince Vaughn.", 123, "https://www.youtube.com/watch?v=pMmz4IZTjq8"), Date.valueOf("2018-12-07"), system.getTheatres().get(1).copy()));
-        system.getShows().add(new Show(new Movie("High School Musical", "High School Musical ist ein US-amerikanischer Musical-Fernsehfilm der Walt Disney Company aus dem Jahr 2006.", 98, "https://www.youtube.com/watch?v=ukDLkkvZYFk"), Date.valueOf("2018-02-13"), system.getTheatres().get(2).copy()));
-        */
-
         system.load();
+
+        if(system.getShows().size() == 0){
+            system.setTheatres(new ArrayList<Theatre>());
+            system.getTheatres().add(new Theatre("Theatre 1 ", new Seat[] {
+                    new Seat(1, 1), new Seat(1, 2), new Seat(1, 3), new Seat(1, 4), new Seat(1, 5), new Seat(1, 6), new Seat(1, 7), new Seat(1, 8),
+                    new Seat(2, 1), new Seat(2, 2), new Seat(2, 3), new Seat(2, 4), new Seat(2, 5), new Seat(2, 6), new Seat(2, 7), new Seat(2, 8),
+                    new Seat(3, 1), new Seat(3, 2), new Seat(3, 3), new Seat(3, 4), new Seat(3, 5), new Seat(3, 6), new Seat(3, 7), new Seat(3, 8),
+                    new Seat(4, 1), new Seat(4, 2), new Seat(4, 3), new Seat(4, 4), new Seat(4, 5), new Seat(4, 6), new Seat(4, 7), new Seat(4, 8),
+                    new Seat(5, 1), new Seat(5, 2), new Seat(5, 3), new Seat(5, 4), new Seat(5, 5), new Seat(5, 6), new Seat(5, 7), new Seat(5, 8),
+                    new Seat(6, 1), new Seat(6, 2), new Seat(6, 3), new Seat(6, 4), new Seat(6, 5), new Seat(6, 6), new Seat(6, 7), new Seat(6, 8),
+                    new Seat(7, 1), new Seat(7, 2), new Seat(7, 3), new Seat(7, 4), new Seat(7, 5), new Seat(7, 6), new Seat(7, 7), new Seat(7, 8),
+                    new Seat(8, 1), new Seat(8, 2), new Seat(8, 3), new Seat(8, 4), new Seat(8, 5), new Seat(8, 6), new Seat(8, 7), new Seat(8, 8)
+            }));
+            system.getTheatres().add(new Theatre("Theatre 2", new Seat[] {
+                    new Seat(1, 1), new Seat(1, 2), new Seat(1, 3), new Seat(1, 4), new Seat(1, 5),
+                    new Seat(2, 1), new Seat(2, 2), new Seat(2, 3), new Seat(2, 4), new Seat(2, 5),
+                    new Seat(3, 1), new Seat(3, 2), new Seat(3, 3), new Seat(3, 4), new Seat(3, 5),
+                    new Seat(4, 1), new Seat(4, 2), new Seat(4, 3), new Seat(4, 4), new Seat(4, 5),
+                    new Seat(5, 1), new Seat(5, 2), new Seat(5, 3), new Seat(5, 4), new Seat(5, 5)
+            }));
+            system.getTheatres().add(new Theatre("Kids Theatre", new Seat[] {
+                    new Seat(1, 1), new Seat(1, 2), new Seat(1, 3), new Seat(1, 4),
+                    new Seat(2, 1), new Seat(2, 2), new Seat(2, 3), new Seat(2, 4),
+                    new Seat(3, 1), new Seat(3, 2), new Seat(3, 3), new Seat(3, 4),
+                    new Seat(4, 1), new Seat(4, 2), new Seat(4, 3), new Seat(4, 4)
+            }));
+            system.getShows().add(new Show(new Movie("RoboCop", "Der Polizist Alex Murphy wird bei einem Einsatz brutal ermordet und erwacht im Körper eines Roboters zu neuem Leben.", 103, "https://www.youtube.com/watch?v=zbCbwP6ibR4"), java.sql.Date.valueOf("2018-08-25"), system.getTheatres().get(0).copy()));
+            system.getShows().add(new Show(new Movie("Die Hochzeits-Crasher", "Die Hochzeits-Crasher ist eine Filmkomödie des Regisseurs David Dobkin aus dem Jahre 2005 mit Owen Wilson und Vince Vaughn.", 123, "https://www.youtube.com/watch?v=pMmz4IZTjq8"), java.sql.Date.valueOf("2018-12-07"), system.getTheatres().get(1).copy()));
+            system.getShows().add(new Show(new Movie("High School Musical", "High School Musical ist ein US-amerikanischer Musical-Fernsehfilm der Walt Disney Company aus dem Jahr 2006.", 98, "https://www.youtube.com/watch?v=ukDLkkvZYFk"), java.sql.Date.valueOf("2018-02-13"), system.getTheatres().get(2).copy()));
+        }
+
     }
 
     /*Properties*/
