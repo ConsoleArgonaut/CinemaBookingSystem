@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 import System.*;
 
 import java.sql.Date;
+import java.util.ArrayList;
 
 public class Main extends Application {
 
@@ -28,13 +29,16 @@ public class Main extends Application {
         PrimaryStage = primaryStage;
         system = new BookingSystem();
 
+        /*
         system.getTheatres().add(new Theatre("Theatre 1", new Seat[] {new Seat(1, 1), new Seat(1, 2), new Seat(1, 3), new Seat(2, 1), new Seat(2, 2), new Seat(2, 3)}));
         system.getTheatres().add(new Theatre("Theatre 2", new Seat[] {new Seat(1, 1), new Seat(1, 2), new Seat(1, 3), new Seat(2, 1), new Seat(2, 2), new Seat(2, 3)}));
         system.getTheatres().add(new Theatre("Theatre 3 - Kids", new Seat[] {new Seat(1, 1), new Seat(1, 2), new Seat(1, 3)}));
         system.getShows().add(new Show(new Movie("RoboCop", "Der Polizist Alex Murphy wird bei einem Einsatz brutal ermordet und erwacht im Körper eines Roboters zu neuem Leben.", 103, "https://www.youtube.com/watch?v=zbCbwP6ibR4"), Date.valueOf("2018-08-25"), system.getTheatres().get(0).copy()));
         system.getShows().add(new Show(new Movie("Die Hochzeits-Crasher", "Die Hochzeits-Crasher ist eine Filmkomödie des Regisseurs David Dobkin aus dem Jahre 2005 mit Owen Wilson und Vince Vaughn.", 123, "https://www.youtube.com/watch?v=pMmz4IZTjq8"), Date.valueOf("2018-12-07"), system.getTheatres().get(1).copy()));
         system.getShows().add(new Show(new Movie("High School Musical", "High School Musical ist ein US-amerikanischer Musical-Fernsehfilm der Walt Disney Company aus dem Jahr 2006.", 98, "https://www.youtube.com/watch?v=ukDLkkvZYFk"), Date.valueOf("2018-02-13"), system.getTheatres().get(2).copy()));
+        */
 
+        system.load();
     }
 
     /*Properties*/
@@ -134,10 +138,37 @@ public class Main extends Application {
     }
 
     @FXML
-    public void cancelreservation_submit(Event arg0){}
+    public void cancelreservation_submit(Event arg0){
+        Client client = null;
+
+        if(cancelreservation_phoneNumber.getText().length() > 0){
+            client = system.getClient(cancelreservation_phoneNumber.getText());
+        }
+        else if(cancelreservation_lastName.getText().length() > 0){
+            client = system.getClient(cancelreservation_firstName.getText(), cancelreservation_lastName.getText());
+        }
+
+        if(client != null){
+            cancelreservation_phoneNumber.setText(client.getPhonenumber());
+            cancelreservation_firstName.setText(client.getFirstname());
+            cancelreservation_lastName.setText(client.getLastname());
+            cancelreservation_bookedMovie.setItems(FXCollections.observableArrayList(system.getReservations(client.getPhonenumber())));
+            cancelreservation_bookedMovie.setValue(cancelreservation_bookedMovie.getItems().get(0));
+        }
+        else{
+            cancelreservation_bookedMovie.setItems(FXCollections.observableArrayList(new ArrayList<Show>()));
+        }
+    }
 
     @FXML
-    public void cancelreservation_cancel(Event arg0){}
+    public void cancelreservation_cancel(Event arg0){
+        Client clientToCancel =  system.getClient(cancelreservation_phoneNumber.getText());
+        if(clientToCancel != null && cancelreservation_bookedMovie.getItems().size() > 0){
+            system.cancelReservation(clientToCancel.getPhonenumber(), (Show)cancelreservation_bookedMovie.getValue());
+        }
+        cancelreservation_submit(null);
+        system.save();
+    }
 
     @FXML
     private void initialize(){
@@ -154,7 +185,7 @@ public class Main extends Application {
                 //Add show
                 addshow_theatre.setItems(FXCollections.observableArrayList(system.getTheatres()));
                 addshow_theatre.setValue(addshow_theatre.getItems().get(0));
-                addshow_film.setItems(FXCollections.observableArrayList(system.getMovies()));
+                addshow_film.setItems(FXCollections.observableArrayList(system.getAllCurrentMovies()));
                 addshow_film.setValue(addshow_film.getItems().get(0));
             }
         }
