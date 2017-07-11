@@ -10,11 +10,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import System.*;
 
 import java.sql.Date;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class Main extends Application {
@@ -65,9 +69,10 @@ public class Main extends Application {
     @FXML private ChoiceBox addshow_theatre = new ChoiceBox();
     @FXML private ChoiceBox addshow_film = new ChoiceBox();
     @FXML private TextField addshow_title = new TextField();
-    @FXML private TextField addshow_description = new TextField();
+    @FXML private TextArea addshow_description = new TextArea();
     @FXML private TextField addshow_duration = new TextField();
     @FXML private TextField addshow_trailer = new TextField();
+    @FXML private TextField addshow_date = new TextField();
 
     public static void main(String[] args) {
         launch(args);
@@ -118,7 +123,23 @@ public class Main extends Application {
     }
 
     @FXML
-    public void addshow_save(Event arg0){}
+    public void addshow_save(Event arg0){
+        DateFormat format = new SimpleDateFormat("dd.MM.yyyy hh:ss");
+        try{
+            java.util.Date dateToSet = format.parse(addshow_date.getText());
+            if(addshow_title.getText().trim().equals("")){
+                system.addShow(new Show((Movie)addshow_film.getValue(), dateToSet, (Theatre)addshow_theatre.getValue()));
+            }
+            else{
+                Movie movieToSet = new Movie(addshow_title.getText(), addshow_description.getText(), Integer.parseInt(addshow_duration.getText()), addshow_trailer.getText());
+                system.addShow(new Show(movieToSet, dateToSet, (Theatre)addshow_theatre.getValue()));
+            }
+            system.save();
+            goToAddShow(null);
+        } catch (ParseException ex){
+
+        }
+    }
 
     @FXML
     public void bookseats_select(Event arg0){
