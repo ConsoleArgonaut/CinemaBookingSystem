@@ -94,7 +94,7 @@ public class BookingSystem {
         Client client = null;
         for (Show show : shows) {
             for (Seat seat : show.getTheatre().getSeats()) {
-                if(client == null && seat.getClient().getFirstname().trim().equals(firstName.trim()) && seat.getClient().getLastname().trim().equals(lastName.trim()))
+                if(client == null && seat.getClient() != null && seat.getClient().getFirstname().trim().equals(firstName.trim()) && seat.getClient().getLastname().trim().equals(lastName.trim()))
                     client = seat.getClient();
             }
         }
