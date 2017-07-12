@@ -40,11 +40,11 @@
                      </children></Pane>
                         <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowSpan="2147483647">
                      <children>
-                        <Button layoutX="85.0" layoutY="32.0" mnemonicParsing="false" onMouseClicked="#goToAddShow" prefHeight="51.0" prefWidth="220.0" text="Add Show" />
-                        <Button layoutX="86.0" layoutY="216.0" mnemonicParsing="false" onMouseClicked="#manageshows_delete" prefHeight="51.0" prefWidth="219.0" text="Delete" />
-                        <ChoiceBox fx:id="manageshows_show" layoutX="86.0" layoutY="127.0" prefHeight="51.0" prefWidth="218.0" />
-                        <Label layoutX="21.0" layoutY="142.0" text="Show" />
-                        <Button layoutX="175.0" layoutY="296.0" mnemonicParsing="false" onMouseClicked="#manageshows_getReservations" text="List Reservations" />
+                        <Button layoutX="85.0" layoutY="32.0" mnemonicParsing="false" onMouseClicked="#goToAddShow" prefHeight="51.0" prefWidth="250.0" text="Add Show" />
+                        <Button layoutX="86.0" layoutY="214.0" mnemonicParsing="false" onMouseClicked="#manageshows_delete" prefHeight="51.0" prefWidth="250.0" text="Delete" />
+                        <ChoiceBox fx:id="manageshows_show" layoutX="85.0" layoutY="123.0" prefHeight="51.0" prefWidth="250.0" />
+                        <Label layoutX="21.0" layoutY="137.0" text="Show" />
+                        <Button layoutX="86.0" layoutY="306.0" mnemonicParsing="false" onMouseClicked="#manageshows_getReservations" prefHeight="51.0" prefWidth="250.0" text="List Reservations" />
                      </children></Pane>
                     </children>
                 </GridPane>
