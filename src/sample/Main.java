@@ -31,7 +31,7 @@ public class Main extends Application {
         PrimaryStage = primaryStage;
         system = new BookingSystem();
 
-        //system.load();
+        system.load();
 
         if(system.getShows().size() == 0){
             system.setTheatres(new ArrayList<Theatre>());
