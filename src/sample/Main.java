@@ -14,6 +14,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import System.*;
 
+import javax.swing.*;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -171,7 +172,7 @@ public class Main extends Application {
             system.save();
             goToAddShow(null);
         } catch (ParseException ex){
-
+            JOptionPane.showMessageDialog(null, "A value was not formatted the right way", "Failed to save show", JOptionPane.INFORMATION_MESSAGE);
         }
     }
 
@@ -183,8 +184,13 @@ public class Main extends Application {
     @FXML
     public void bookseats_submit(Event arg0){
         if(bookseats_row.getText().length() > 0 && bookseats_seatFrom.getText().length() > 0 && bookseats_seatTill.getText().length() > 0 && bookseats_phonenumber.getText().length() > 0){
-            system.bookSeats(new Client(bookseats_firstName.getText(), bookseats_name.getText(), bookseats_phonenumber.getText()), (Show)bookseats_shows.getValue(), Integer.parseInt(bookseats_row.getText()), Integer.parseInt(bookseats_seatFrom.getText()), Integer.parseInt(bookseats_seatTill.getText()));
-            system.save();
+            try{
+                system.bookSeats(new Client(bookseats_firstName.getText(), bookseats_name.getText(), bookseats_phonenumber.getText()), (Show)bookseats_shows.getValue(), Integer.parseInt(bookseats_row.getText()), Integer.parseInt(bookseats_seatFrom.getText()), Integer.parseInt(bookseats_seatTill.getText()));
+                system.save();
+            }
+            catch (Exception ex){
+                JOptionPane.showMessageDialog(null, "Seat could not be booked", "Booking failed", JOptionPane.INFORMATION_MESSAGE);
+            }
             bookseats_row.setText("");
             bookseats_seatFrom.setText("");
             bookseats_seatTill.setText("");
@@ -212,6 +218,7 @@ public class Main extends Application {
         }
         else{
             cancelreservation_bookedMovie.setItems(FXCollections.observableArrayList(new ArrayList<Show>()));
+            JOptionPane.showMessageDialog(null, "No client was found", "Wrong name or number", JOptionPane.INFORMATION_MESSAGE);
         }
     }
 
