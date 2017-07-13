@@ -20,8 +20,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
-import java.awt.*;
-
 public class Main extends Application {
 
     @Override
@@ -75,9 +73,6 @@ public class Main extends Application {
 
     private static Stage PrimaryStage;
 
-<<<<<<< HEAD
-    @FXML private Label seatOverview;
-=======
     @FXML private TextField cancelreservation_phoneNumber = new TextField();
     @FXML private TextField cancelreservation_firstName = new TextField();
     @FXML private TextField cancelreservation_lastName = new TextField();
@@ -102,7 +97,6 @@ public class Main extends Application {
 
     @FXML private ChoiceBox manageshows_show = new ChoiceBox();
     @FXML private Label manageshows_reservations = new Label();
->>>>>>> 0bfa90cc2dc9a2b9be7f076f584c5a01fbb085bf
 
     public static void main(String[] args) {
         launch(args);
