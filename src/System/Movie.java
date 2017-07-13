@@ -27,4 +27,9 @@ public class Movie implements Serializable {
         trailer = movieTrailer;
         length = movieLength;
     }
+
+    @Override
+    public String toString() {
+        return title;
+    }
 }

@@ -12,7 +12,7 @@ public class BookingSystem {
     private ArrayList<Show> shows = new ArrayList<Show>();
     private ArrayList<Theatre> theatres = new ArrayList<Theatre>();
 
-    public Movie[] getAllCurrentMovies() {
+    public ArrayList<Movie> getAllCurrentMovies() {
         ArrayList<Movie> movies = new ArrayList<Movie>();
         for (Show s : shows) {
             if (movies.size() == 0)
@@ -21,7 +21,7 @@ public class BookingSystem {
                 movies.add(s.getMovie());
         }
 
-        return (Movie[]) movies.toArray();
+        return movies;
     }
 
     public void bookSeats(Client client, Show show, int rownumber, int seatnumberFrom, int seatnumberTo) {
@@ -45,7 +45,7 @@ public class BookingSystem {
 
     public void cancelReservation(String phonenumber, Show show) {
         for (Seat s : show.getTheatre().getSeats()) {
-            if (s.getClient() != null && s.getClient().getPhonenumber() == phonenumber)
+            if (s.getClient() != null && s.getClient().getPhonenumber().trim().equals(phonenumber))
                 s.setClient(null);
         }
     }
@@ -72,9 +72,10 @@ public class BookingSystem {
 
     public ArrayList<Show> getReservations(String phonenumber) {
         ArrayList<Show> showsToReturn = new ArrayList<Show>();
+        phonenumber = phonenumber.trim();
         for (Show show : shows) {
             for (Seat seat : show.getTheatre().getSeats()) {
-                if(!showsToReturn.contains(show) && seat.getClient() != null && seat.getClient().getPhonenumber() == phonenumber)
+                if(!showsToReturn.contains(show) && seat.getClient() != null && seat.getClient().getPhonenumber().trim().equals(phonenumber))
                     showsToReturn.add(show);
             }
         }
@@ -93,7 +94,7 @@ public class BookingSystem {
         Client client = null;
         for (Show show : shows) {
             for (Seat seat : show.getTheatre().getSeats()) {
-                if(client == null && seat.getClient().getFirstname() == firstName && seat.getClient().getLastname() == lastName)
+                if(client == null && seat.getClient() != null && seat.getClient().getFirstname().trim().equals(firstName.trim()) && seat.getClient().getLastname().trim().equals(lastName.trim()))
                     client = seat.getClient();
             }
         }
@@ -104,7 +105,7 @@ public class BookingSystem {
         Client client = null;
         for (Show show : shows) {
             for (Seat seat : show.getTheatre().getSeats()) {
-                if(client == null && seat.getClient().getPhonenumber() == phonenumber)
+                if(client == null && seat.getClient() != null &&  seat.getClient().getPhonenumber().trim().equals(phonenumber.trim()))
                     client = seat.getClient();
             }
         }
@@ -121,5 +122,16 @@ public class BookingSystem {
         SavingObject savObject = writer.deserialzeCinema();
         shows = savObject.shows;
         theatres = savObject.theatres;
+    }
+
+    public String getReservations(Show show){
+        String returnValue = "Reservations:";
+
+        for (Seat s:show.getTheatre().getSeats()) {
+            if(s.getClient() != null)
+                returnValue = returnValue + "\n" + String.valueOf(s.getRownumber()) + "-" + String.valueOf(s.getSeatnumber()) + ": " + s.getClient().getPhonenumber() + ", " + s.getClient().getFirstname() + " " + s.getClient().getLastname();
+        }
+
+        return returnValue;
     }
 }

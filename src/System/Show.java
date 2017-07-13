@@ -1,6 +1,8 @@
 package System;
 
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -47,5 +49,11 @@ public class Show implements Serializable {
         movie = showMovie;
         startTime = showStartTime;
         theatre = showTheatre;
+    }
+
+    @Override
+    public String toString() {
+        DateFormat df = new SimpleDateFormat("dd.MM.yyyy HH:mm");
+        return df.format(this.startTime) + " | " + this.movie.title + " | " + this.theatre.getTheatrenumber();
     }
 }
