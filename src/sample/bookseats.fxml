@@ -37,6 +37,7 @@
                <children>
                   <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowSpan="2147483647">
                      <children>
+<<<<<<< HEAD
                         <Label layoutX="50.0" layoutY="50.0" text="Movie" />
                         <Button layoutX="350.0" layoutY="50.0" mnemonicParsing="false" text="Select" />
                         <Label layoutX="50.0" layoutY="100.0" text="Row:" />
@@ -57,6 +58,28 @@
                   <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowSpan="2147483647">
                      <children>
                         <Label fx:id="seatOverview" layoutX="50.0" layoutY="50.0" prefHeight="350.0" prefWidth="350.0" text="Label" />
+=======
+                        <Label layoutX="17.0" layoutY="50.0" text="Shows:" />
+                        <Label layoutX="17.0" layoutY="100.0" text="Row:" />
+                        <TextField fx:id="bookseats_row" layoutX="119.0" layoutY="95.0" prefWidth="200.0" />
+                        <Label layoutX="17.0" layoutY="150.0" text="Seat from:" />
+                        <TextField fx:id="bookseats_seatFrom" layoutX="119.0" layoutY="146.0" prefWidth="200.0" />
+                        <Label layoutX="17.0" layoutY="200.0" text="Seat till:" />
+                        <TextField fx:id="bookseats_seatTill" layoutX="119.0" layoutY="196.0" prefWidth="200.0" />
+                        <Label layoutX="17.0" layoutY="250.0" text="Phonenumber:" />
+                        <TextField fx:id="bookseats_phonenumber" layoutX="119.0" layoutY="245.0" prefWidth="200.0" />
+                        <Label layoutX="19.0" layoutY="301.0" text="First Name:" />
+                        <TextField fx:id="bookseats_firstName" layoutX="119.0" layoutY="296.0" prefWidth="200.0" />
+                        <Label layoutX="22.0" layoutY="351.0" text="Last Name:" />
+                        <TextField fx:id="bookseats_name" layoutX="119.0" layoutY="346.0" prefWidth="200.0" />
+                        <Button layoutX="355.0" layoutY="396.0" mnemonicParsing="false" onMouseClicked="#bookseats_submit" prefHeight="31.0" prefWidth="70.0" text="Submit" />
+                        <ChoiceBox fx:id="bookseats_shows" layoutX="120.0" layoutY="46.0" prefHeight="31.0" prefWidth="200.0" />
+                        <Button layoutX="356.0" layoutY="46.0" mnemonicParsing="false" onMouseClicked="#bookseats_select" prefHeight="31.0" prefWidth="70.0" text="Refresh" />
+                     </children></Pane>
+                  <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowSpan="2147483647">
+                     <children>
+                        <Label fx:id="bookseats_openRows" layoutX="50.0" layoutY="50.0" prefHeight="350.0" prefWidth="350.0" text="Label" />
+>>>>>>> 0bfa90cc2dc9a2b9be7f076f584c5a01fbb085bf
                      </children></Pane>
                </children>
             </GridPane>
@@ -73,18 +96,10 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                     </padding>
                 </Label>
-                <Label fx:id="currentMoneyLabel" prefHeight="41.0" prefWidth="108.0">
-                    <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                    </HBox.margin>
-                    <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                    </padding>
-                </Label>
 
             <ImageView fitHeight="45.0" fitWidth="40.0" onMouseClicked="#goToStarter" pickOnBounds="true" preserveRatio="true">
                <HBox.margin>
-                  <Insets bottom="10.0" left="575.0" right="10.0" top="12.0" />
+                  <Insets bottom="10.0" left="735.0" right="10.0" top="12.0" />
                </HBox.margin>
                <image>
                   <Image url="@../images/home.png" />
