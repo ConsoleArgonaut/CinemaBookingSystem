@@ -83,6 +83,7 @@ public class Theatre implements Serializable {
     }
 
     @Override
+    /*Returns the theatre number and seat count if toString is executed*/
     public String toString() {
         return theatrenumber + " (Seats: " + String.valueOf(getSeats().length) + ")";
     }

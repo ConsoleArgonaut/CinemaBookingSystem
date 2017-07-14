@@ -9,9 +9,11 @@ import java.util.ArrayList;
  * Created by Michael on 23.06.2017.
  */
 public class BookingSystem {
+    /*Properties*/
     private ArrayList<Show> shows = new ArrayList<Show>();
     private ArrayList<Theatre> theatres = new ArrayList<Theatre>();
 
+    /*Gets all movies from the different shows*/
     public ArrayList<Movie> getAllCurrentMovies() {
         ArrayList<Movie> movies = new ArrayList<Movie>();
         for (Show s : shows) {
@@ -24,6 +26,7 @@ public class BookingSystem {
         return movies;
     }
 
+    /*Books a seat for a client*/
     public void bookSeats(Client client, Show show, int rownumber, int seatnumberFrom, int seatnumberTo) {
         if (!shows.contains(show))
             throw new IllegalArgumentException("Show does not exists");
@@ -43,6 +46,7 @@ public class BookingSystem {
         }
     }
 
+    /*Cancels a reservation by searching for the phone number*/
     public void cancelReservation(String phonenumber, Show show) {
         for (Seat s : show.getTheatre().getSeats()) {
             if (s.getClient() != null && s.getClient().getPhonenumber().trim().equals(phonenumber))
@@ -50,26 +54,32 @@ public class BookingSystem {
         }
     }
 
+    /*Adds a show*/
     public void addShow(Show show) {
         shows.add(show);
     }
 
+    /*Setter for shows*/
     public void setShows(ArrayList<Show> shows) {
         this.shows = shows;
     }
 
+    /*Getter for shows*/
     public ArrayList<Show> getShows() {
         return shows;
     }
 
+    /*Getter for theatres*/
     public ArrayList<Theatre> getTheatres() {
         return theatres;
     }
 
+    /*Setter for theatres*/
     public void setTheatres(ArrayList<Theatre> theatres) {
         this.theatres = theatres;
     }
 
+    /*Returns all shows with a seat booked with a specific phone number*/
     public ArrayList<Show> getReservations(String phonenumber) {
         ArrayList<Show> showsToReturn = new ArrayList<Show>();
         phonenumber = phonenumber.trim();
@@ -82,14 +92,17 @@ public class BookingSystem {
         return showsToReturn;
     }
 
+    /*Returns all shows with a seat booked with a specific client*/
     public ArrayList<Show> getReservations(Client client) {
         return getReservations(client.getPhonenumber());
     }
 
+    /*Returns all shows with a seat booked with a specific first and last name*/
     public ArrayList<Show> getReservations(String firstName, String lastName) {
         return getReservations(getClient(firstName, lastName));
     }
 
+    /*Returns a client (if existing), searches for it with a specific first and last name*/
     public Client getClient(String firstName, String lastName) {
         Client client = null;
         for (Show show : shows) {
@@ -101,6 +114,7 @@ public class BookingSystem {
         return client;
     }
 
+    /*Returns a client (if existing), searches for it with a specific phone number*/
     public Client getClient(String phonenumber) {
         Client client = null;
         for (Show show : shows) {
@@ -112,11 +126,13 @@ public class BookingSystem {
         return client;
     }
 
+    /*Saves the current data*/
     public void save(){
         FileWriter writer = new FileWriter();
         writer.serializeCinema(shows, theatres);
     }
 
+    /*Loads the current data*/
     public void load(){
         FileWriter writer = new FileWriter();
         SavingObject savObject = writer.deserialzeCinema();
@@ -124,6 +140,7 @@ public class BookingSystem {
         theatres = savObject.theatres;
     }
 
+    /*Returns all reservations of a show as a String*/
     public String getReservations(Show show){
         String returnValue = "Reservations:";
 

@@ -70,7 +70,6 @@ public class Main extends Application {
     private static BookingSystem system;
     private static boolean isFirstInitialize = true;
 
-
     private static Stage PrimaryStage;
 
     @FXML private TextField cancelreservation_phoneNumber = new TextField();
@@ -158,6 +157,7 @@ public class Main extends Application {
     }
 
     @FXML
+    /*This method adds a new show to the system*/
     public void addshow_save(Event arg0){
         DateFormat format = new SimpleDateFormat("dd.MM.yyyy hh:ss");
         try{
@@ -177,11 +177,13 @@ public class Main extends Application {
     }
 
     @FXML
+    /*This method displays the open seats of the currently selected show*/
     public void bookseats_select(Event arg0){
         bookseats_openRows.setText(((Show)bookseats_shows.getValue()).getTheatre().getAllOpenSeats());
     }
 
     @FXML
+    /*This method tries to book a seat for the selected client*/
     public void bookseats_submit(Event arg0){
         if(bookseats_row.getText().length() > 0 && bookseats_seatFrom.getText().length() > 0 && bookseats_seatTill.getText().length() > 0 && bookseats_phonenumber.getText().length() > 0){
             try{
@@ -199,6 +201,7 @@ public class Main extends Application {
     }
 
     @FXML
+    /*Gets all the reservations for the selected client*/
     public void cancelreservation_submit(Event arg0){
         Client client = null;
 
@@ -223,6 +226,7 @@ public class Main extends Application {
     }
 
     @FXML
+    /*Cancels the selected reservation for the selected client*/
     public void cancelreservation_cancel(Event arg0){
         Client clientToCancel =  system.getClient(cancelreservation_phoneNumber.getText());
         if(clientToCancel != null && cancelreservation_bookedMovie.getItems().size() > 0){
@@ -233,6 +237,7 @@ public class Main extends Application {
     }
 
     @FXML
+    /*Deletes the selected show*/
     public void manageshows_delete(Event arg0){
         if(manageshows_show.getItems().size() > 0)
             system.getShows().remove(manageshows_show.getValue());
@@ -241,11 +246,13 @@ public class Main extends Application {
     }
 
     @FXML
+    /*Gets all the reservations for the selected show*/
     public void manageshows_getReservations(Event arg0){
         manageshows_reservations.setText(system.getReservations((Show)manageshows_show.getValue()));
     }
 
     @FXML
+    /*Sets parameters if needed*/
     private void initialize(){
         if(isFirstInitialize)
             isFirstInitialize = false;
